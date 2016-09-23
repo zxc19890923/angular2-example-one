@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <td>{{title}}</td>
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}}</td>
+        <td>{{hero.sex}}</td>
+        <td>
+            <input type="text" [(ngModel)]="hero.name" placeholder="{{hero.name}}"/>
+        </td>
+    </tr>
+</table>
+<div *ngIf="selectHero != undefined">
+    <h2>我的英雄 {{selectHero}}</h2>
+</div>
+<ul class="heros">
+    <li *ngFor="let item of heros" (click)=onSelect(item.name)><span class="red">{{item.id}}</span> {{item.name}}</li>
+</ul>
+
